@@ -13,15 +13,34 @@ const btnNew = document.querySelector(".btn--new");
 const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
 
-// initial state
-score0El.textContent = 0;
-score1El.textContent = 0;
-diceEl.classList.add("hidden");
-let playing = true;
+let scores, currentScore, activePlayer, playing;
 
-const scores = [0, 0]; // total scores of the 2 players
-let currentScore = 0;
-let activePlayer = 0;
+// fn to set inital state
+const init = () => {
+  score0El.textContent = 0;
+  score1El.textContent = 0;
+  diceEl.classList.add("hidden");
+
+  scores = [0, 0]; // total scores of the 2 players
+  playing = true;
+  currentScore = 0;
+  activePlayer = 0;
+
+  score0El.textContent = 0;
+  score1El.textContent = 0;
+  current0El.textContent = 0;
+  current1El.textContent = 0;
+
+  diceEl.classList.add("hidden");
+  player0El.classList.remove("player--winner");
+  player1El.classList.remove("player--winner");
+  player0El.classList.add("player--active");
+  player1El.classList.remove("player--active");
+  // js check before removing wether the class is there ,and also before adding
+  // so if the class is there it wont again
+};
+
+init();
 
 // switch player fn
 const switchPlayer = () => {
@@ -56,7 +75,7 @@ btnHold.addEventListener("click", function () {
     document.getElementById(`score--${activePlayer}`).textContent =
       scores[activePlayer];
 
-    if (scores[activePlayer] >= 10) {
+    if (scores[activePlayer] >= 100) {
       // add player winner class
       playing = false;
       diceEl.classList.add("hidden");
@@ -71,3 +90,5 @@ btnHold.addEventListener("click", function () {
     }
   }
 });
+
+btnNew.addEventListener("click", init);
