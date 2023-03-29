@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  font-size: 2rem;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid red;
+  border-radius: 7px;
+  min-height: 60rem;
+  min-width: 50rem;
+}
+
+.current {
+  width: 20rem;
+  height: 10rem;
+  background-color: salmon;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 1.8rem;
+  border-radius: 7px;
+}
+
+.name {
+  font-size: 4.8rem;
+  margin-bottom: 2.4rem;
+  font-weight: 600;
+}
+
+.score {
+  font-size: 4.8rem;
+  margin-bottom: 22rem;
+  font-weight: 600;
+}
+
+.dice {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  height: 8.4rem;
+  width: 8.4rem;
+}
+
+.btn {
+  position: absolute;
+  font-family: inherit;
+  background-color: salmon;
+  padding: 0.7rem 2.5rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 500px;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+
+.btn--new {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.btn--roll {
+  bottom: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn--hold {
+  bottom: 8%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
